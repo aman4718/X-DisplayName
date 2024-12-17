@@ -40,13 +40,13 @@ const InputForm = () => {
                     <div>
                         <button type="submit">Submit</button>
                     </div>
-                    {submitData && (
-                        <div>
-                            <p>Full Name: {capitalizeFirstCharacter(submitData.firstname)} {capitalizeFirstCharacter(submitData.lastname)}</p>
-                        </div>
-                    )}
                 </div>
             </form>
+            {submitData && (
+                <div>
+                    <p>Full Name: {capitalizeFirstCharacter(submitData.firstname)} {capitalizeFirstCharacter(submitData.lastname)}</p>
+                </div>
+            )}
         </div>
     )
 }
