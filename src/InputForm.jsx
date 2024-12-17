@@ -27,11 +27,11 @@ const InputForm = () => {
                     <h1>Full Name Display</h1>
                     <div>
                         <label>First Name:</label>
-                        <input type="text" id="firstname" name="firstname" value={formData.firstname} onChange={handleChange} />
+                        <input type="text" id="firstname" name="firstname" value={formData.firstname} onChange={handleChange} required/>
                     </div>
                     <div>
                         <label>Last Name:</label>
-                        <input type="text" id="lastname" name="lastname" value={formData.lastname} onChange={handleChange} />
+                        <input type="text" id="lastname" name="lastname" value={formData.lastname} onChange={handleChange} required/>
                     </div>
                     <div>
                         <button type="submit">Submit</button>
