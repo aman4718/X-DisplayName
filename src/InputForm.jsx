@@ -20,6 +20,10 @@ const InputForm = () => {
         setSubmitData(formData);
         setFormData({firstname:'',lastname:''})
     }
+    function capitalizeFirstCharacter(str) {
+        if (!str) return ''; // Handle empty or null strings
+        return str.charAt(0).toUpperCase() + str.slice(1);
+    }
     return (
         <div>
             <form onSubmit={handleSubmit}>
@@ -27,18 +31,18 @@ const InputForm = () => {
                     <h1>Full Name Display</h1>
                     <div>
                         <label>First Name:</label>
-                        <input type="text" id="firstname" name="firstname" value={formData.firstname} onChange={handleChange} required/>
+                        <input type="text" id="firstname" pattern="[A-Za-z\s]*" name="firstname" value={formData.firstname} onChange={handleChange} required/>
                     </div>
                     <div>
                         <label>Last Name:</label>
-                        <input type="text" id="lastname" name="lastname" value={formData.lastname} onChange={handleChange} required/>
+                        <input type="text" id="lastname" pattern="[A-Za-z\s]*" name="lastname" value={formData.lastname} onChange={handleChange} required/>
                     </div>
                     <div>
                         <button type="submit">Submit</button>
                     </div>
                     {submitData && (
                         <div>
-                            <p>Full Name: {submitData.firstname} {submitData.lastname}</p>
+                            <p>Full Name: {capitalizeFirstCharacter(submitData.firstname)} {capitalizeFirstCharacter(submitData.lastname)}</p>
                         </div>
                     )}
                 </div>
