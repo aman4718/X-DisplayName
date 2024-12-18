@@ -18,7 +18,6 @@ const InputForm = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         setSubmitData(formData);
-        setFormData({firstname:'',lastname:''})
     }
     function capitalizeFirstCharacter(str) {
         if (!str) return ''; // Handle empty or null strings
